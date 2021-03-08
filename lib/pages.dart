@@ -20,7 +20,9 @@ class APage extends StatefulWidget {
 
 class _APageState extends State<APage> {
   void _goToB({BuildContext context}) async {
-    Navigator.pushNamed(context, '/BPage', arguments: 'One fish, two fish');
+    var result =
+        Navigator.pushNamed(context, '/BPage', arguments: 'One fish, two fish');
+    print(result);
   }
 
   @override
@@ -49,7 +51,7 @@ class BPage extends StatefulWidget {
 class _BPageState extends State<BPage> {
   String message;
   void _goBack({BuildContext context}) {
-    Navigator.pop(context);
+    Navigator.pop(context, message);
   }
 
   @override
