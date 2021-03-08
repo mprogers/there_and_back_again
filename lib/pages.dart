@@ -20,7 +20,7 @@ class APage extends StatefulWidget {
 
 class _APageState extends State<APage> {
   void _goToB({BuildContext context}) async {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => BPage()));
+    Navigator.pushNamed(context, '/BPage');
   }
 
   @override
