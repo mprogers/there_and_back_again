@@ -20,7 +20,7 @@ class APage extends StatefulWidget {
 
 class _APageState extends State<APage> {
   void _goToB({BuildContext context}) async {
-    Navigator.pushNamed(context, '/BPage');
+    Navigator.pushNamed(context, '/BPage', arguments: 'One fish, two fish');
   }
 
   @override
@@ -53,6 +53,8 @@ class _BPageState extends State<BPage> {
 
   @override
   Widget build(BuildContext context) {
+    final String args = ModalRoute.of(context).settings.arguments;
+    print(args);
     return Scaffold(
         appBar: AppBar(title: Text('BPage')),
         body: Column(
