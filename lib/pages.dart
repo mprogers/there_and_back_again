@@ -47,6 +47,7 @@ class BPage extends StatefulWidget {
 }
 
 class _BPageState extends State<BPage> {
+  String message;
   void _goBack({BuildContext context}) {
     Navigator.pop(context);
   }
@@ -61,6 +62,11 @@ class _BPageState extends State<BPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              TextField(
+                  decoration: InputDecoration(labelText: 'Phrase'),
+                  onChanged: (text) {
+                    message = text;
+                  }),
               ElevatedButton(
                 onPressed: () {
                   _goBack(context: context);
