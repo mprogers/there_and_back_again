@@ -20,9 +20,11 @@ class APage extends StatefulWidget {
 
 class _APageState extends State<APage> {
   void _goToB({BuildContext context}) async {
-    var result =
-        Navigator.pushNamed(context, '/BPage', arguments: 'One fish, two fish');
-    print(result);
+    var result = await Navigator.pushNamed(context, '/BPage',
+        arguments: 'One fish, two fish');
+    SnackBar snackBar =
+        SnackBar(content: Text(result), duration: Duration(milliseconds: 500));
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
   @override
